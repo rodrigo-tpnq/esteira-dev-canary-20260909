@@ -17,6 +17,9 @@ class ContractTests(unittest.TestCase):
         self.assertEqual(calculator.total_cents([100, 250]), 350)
         self.assertEqual(calculator.total_cents([]), 0)
 
+    def test_trims_label(self):
+        self.assertEqual(calculator.display_label("  Example  "), "Example")
+
 
 if __name__ == "__main__":
     unittest.main()
