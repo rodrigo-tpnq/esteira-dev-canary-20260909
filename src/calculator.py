@@ -1,8 +1,8 @@
-"""Synthetic arithmetic with formatted integer cents, not production code."""
+"""Synthetic normalized labels and formatted integer cents, not production code."""
 
 
 def display_label(value: str) -> str:
-    return value
+    return value.strip()
 
 
 def total_cents(amounts: list[int]) -> int:
