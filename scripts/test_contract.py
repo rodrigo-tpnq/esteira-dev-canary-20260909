@@ -20,6 +20,11 @@ class ContractTests(unittest.TestCase):
     def test_trims_label(self):
         self.assertEqual(calculator.display_label("  Example  "), "Example")
 
+    def test_formats_integer_cents_without_float_rounding(self):
+        for amount, expected in ((350, "3.50"), (0, "0.00"), (-1, "-0.01"), (123456789012345, "1234567890123.45")):
+            with self.subTest(amount=amount):
+                self.assertEqual(calculator.format_cents(amount), expected)
+
 
 if __name__ == "__main__":
     unittest.main()
